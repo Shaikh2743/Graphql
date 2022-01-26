@@ -1,0 +1,78 @@
+.gallery {
+    display: flex;
+    width: 90%;
+    padding: 0 3%;
+    overflow: hidden;
+    /* margin-left: 0%; */
+}
+
+.card-wrapper {
+    width: 85%;
+    margin: 0 auto;
+}
+.img-display {
+    overflow: hidden;
+    border-radius: 5%;
+}
+.img-showcase {
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.img-showcase img {
+    min-width: 100%;
+}
+
+.Product {
+    width: 100%;
+    border-radius: 5%;
+    transition: transform .5s ease;
+}
+/* .Product:hover{
+    transform: scale(1.4) ;
+    width: 100%;
+    border-radius: 5%;
+} */
+
+.img-select {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    z-index: 999;
+    margin-right: -15%;
+}
+
+.img-item {
+        margin: 0.3rem;
+        border: 0.5px solid #0000ff1f;
+        padding: 5px;
+}
+
+
+
+/* main gallery css starts from here*/
+
+
+.main-gallery{
+    display: flex;
+    width: 100%;
+    margin-top: 5rem;
+}
+.gallery-slider{
+    width: 100%;
+    display: flex;
+}
+
+.thumbnails{
+    width: 20%;
+}
+
+.main-image{
+    width: 80%;
+
+}
+
+.gallery-content{
+    width: 50%;
+}
