@@ -27,7 +27,7 @@ h1 , .sample{
     background-color: #f3f3f3;
 }
 .main-content{
-  margin-top: 5%;
+  margin-top: 2%;
 }
 .main-header{
   height: var(--header-nav-height);
@@ -49,6 +49,7 @@ h1 , .sample{
   background-color: #f3f3f3;
   border: none;
   outline: none;
+  width: 100%;
 }
 
 .search-bar{
@@ -67,8 +68,10 @@ h1 , .sample{
 }
 
 .search-bar{
-  width:25%
+  width: 35%;
+  padding: 0.5rem;
 }
+
 .Bprofile{
   width: 5%;
 }
@@ -78,7 +81,7 @@ h1 , .sample{
 
 select {
   outline: none;
-  height: 2rem;
+  height: 3rem;
 }
 
 .Minicart, .profile {
@@ -115,7 +118,6 @@ img{
 }
 .main-image{
   width: 100%;
-  height:100%;
 }
 .main1 {
   display: flex;
@@ -173,4 +175,173 @@ h3 {
 h3{
   font-size: 1.8rem;
   font-weight: 500;
+}
+
+/*  nav menu css starts from here*/
+
+.menu-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 1.8rem;
+  border-bottom: 1px solid #0000001f;
+}
+.nav-list{
+  justify-content: center;
+}
+
+.menu-container ul.nav-list {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  list-style: none;
+}
+.nav-list-item {
+  cursor: pointer;
+  margin: 0 25px;
+  padding-right: 0;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+}
+.nav-list-item:hover{
+  cursor: pointer;
+  border-bottom: 2px solid rgb(22, 186, 207);
+}
+
+/* breadcrumbs css here */
+
+.breadcrumbs{
+  display: flex;
+  list-style: none;
+  margin-bottom: 3rem;
+}
+.breadcrumbs-list{
+  padding: 10px;
+  font-size: 14px;
+}
+.list-name{
+  color: rgb(99, 99, 89);
+}
+
+/*  Footer CSS starts from here */
+.Footer {
+  display: flex;
+  width: 100%;
+}
+.Footer-block{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.Footer-rowone{
+  display: flex;
+  width: 100%;
+  line-height: 3rem;
+  font-size: 14px;
+  margin-top: 5%;
+}
+.Footer-copyright{
+  width: 60%;
+}
+/* .Footer-copyright div {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  letter-spacing: -.204545px;
+} */
+.Footer-shopping{
+  width: 20%;
+}
+.Footer-newsletter .email-input input {
+  border: none;
+  border-bottom: 1px solid #dedede;
+  color: #dedede;
+  font-size: 1.2rem;
+  line-height: 1.25rem;
+  letter-spacing: -.204545px;
+  background-color: #f8f8f8;
+  padding: 10px 5rem 10px 0;
+  width: 290px;
+}
+
+/* .Footer-newsletter .email-input button {
+  border: none;
+  background: #bbdde8;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px 15px;
+} */
+
+.Footer-shopping ul{
+  list-style: none;
+}
+.list-heading{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.Footer-account{
+  width: 20%;
+}
+.Footer-account ul{
+  list-style: none;
+}
+
+.Footer-rowtwo{
+  display: flex;
+  width: 100%;
+  margin-top: 5%;
+}
+.Footer-newsletter{
+  width: 60%;
+}
+.Footer-sociallinks{
+  display: flex;
+  justify-content: flex-end;
+  width: 40%;
+}
+.facebook , .twitter, .instagram{
+  width: 15%;
+}
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+/* related products CSS*/ 
+
+.related-items-container{
+  /* display: flex; */
+  margin-top: 5%;
+  padding: 0 10%;
+  background-color: #f3f3f3;
+}
+.related-content{
+  text-align: center;
+  padding: 5% ;
+}
+.related-image{
+  mix-blend-mode: multiply;
+}
+.related-products{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  column-gap: 3%;
+}
+.realted-original-price{
+  text-align: left;
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.308);
+  font-size: 1.2rem;
+}
+.related-price{
+  font-size: 1.3rem;
+}
+.related-products-items{
+  width: 25%;
 }

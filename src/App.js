@@ -47,9 +47,12 @@ export default class App extends Component {
         items{
           name
         sku
-          breadcrumbs{
-            category_name
-          }
+        breadcrumbs {
+          category_id
+          category_level
+          category_name
+          category_url_key
+        }
           
           price{
             minimalPrice{
@@ -109,8 +112,7 @@ export default class App extends Component {
               
             }
           }
-            
-       
+
       }
         
         }
@@ -126,14 +128,14 @@ export default class App extends Component {
         default_display_currency_code
         default_display_currency_symbol
       }
-      cmsBlocks(identifiers: "3"){
+      cmsBlocks(identifiers: "1"){
         items {
           content
           disabled
           identifier
           title
         }
-      }
+          }
     }
     `
     sendRequest({
@@ -195,12 +197,24 @@ export default class App extends Component {
                   </svg></button>
               </div>
               <div className="header-content cart">
-                <button className="Minicart" ><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="grey"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M22 9h-4.79l-4.38-6.56c-.19-.28-.51-.42-.83-.42s-.64.14-.83.43L6.79 9H2c-.55 0-1 .45-1 1 0 .09.01.18.04.27l2.54 9.27c.23.84 1 1.46 1.92 1.46h13c.92 0 1.69-.62 1.93-1.46l2.54-9.27L23 10c0-.55-.45-1-1-1zM12 4.8L14.8 9H9.2L12 4.8zM18.5 19l-12.99.01L3.31 11H20.7l-2.2 8zM12 13c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+                <button className="Minicart" ><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="grey"><path d="M0 0h24v24H0V0z" fill="none">
+                </path><path d="M22 9h-4.79l-4.38-6.56c-.19-.28-.51-.42-.83-.42s-.64.14-.83.43L6.79 9H2c-.55 0-1 .45-1 1 0 .09.01.18.04.27l2.54 9.27c.23.84 1 1.46 1.92 1.46h13c.92 0 1.69-.62 1.93-1.46l2.54-9.27L23 10c0-.55-.45-1-1-1zM12 4.8L14.8 9H9.2L12 4.8zM18.5 19l-12.99.01L3.31 11H20.7l-2.2 8zM12 13c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
                   <span aria-label="Items in cart" class="items-in-cart"></span></button>
               </div>
             </div>
           </div>
+          <div className="menu-container">
+            <ul className="nav-list">
+              <li className="nav-list-item">Men</li>
+              <li className="nav-list-item">Women</li>
+              <li className="nav-list-item">Accessories</li>
+              <li className="nav-list-item">Footwear</li>
+              <li className="nav-list-item">Trending</li>
+            </ul>
+          </div>
+
           <div className="App">
+
             {/* <h1>React and Graphql</h1>
         <p className="sample">Sample response</p> */}
             {
@@ -210,7 +224,17 @@ export default class App extends Component {
                 <div>
 
                   <div>
+                    <ul className="breadcrumbs">
+                      <li className="breadcrumbs-list">Home &gt;</li>
+                      <li className="breadcrumbs-list">{this.state.data.data.products.items[0].breadcrumbs[0].category_url_key}  &gt; </li>
+                      <li className="breadcrumbs-list">{this.state.data.data.products.items[0].breadcrumbs[1].category_url_key}  &gt; </li>
+                      <li className="breadcrumbs-list">{this.state.data.data.products.items[0].breadcrumbs[2].category_url_key}  &gt; </li>
+                      <li className="breadcrumbs-list list-name"> {this.state.data.data.products.items[0].name}</li>
+                    </ul>
                     <div className="main1">
+                      <div>
+
+                      </div>
                       <div className="mainA">
                         {/* <div>
                           <img alt="main" className="main-image" src=
@@ -228,51 +252,51 @@ export default class App extends Component {
                             )
                           })}
                         </div> */}
-                                        <div className="gallery-slider">
-                    <div className="thumbnails">
-                        <div class="img-select">
-                            <div class="img-item" >
+                        <div className="gallery-slider">
+                          <div className="thumbnails">
+                            <div class="img-select">
+                              <div class="img-item" >
                                 <a href="#slide1" data-id="1"><img src={Carousel2} alt="product-image" /></a>
-                            </div>
-                            <div class="img-item" >
+                              </div>
+                              <div class="img-item" >
                                 <a href="#slide2" data-id="1"><img src={Carousel} alt="product-image" /></a>
-                            </div>
-                            <div class="img-item" >
+                              </div>
+                              <div class="img-item" >
                                 <a href="#slide3" data-id="1"><img src={Carousel1} alt="product-image" /></a>
-                            </div>
-                            <div class="img-item">
+                              </div>
+                              <div class="img-item">
                                 <a href="#slide4" data-id="1"><img src={Carousel3} alt="product-image" /></a>
-                            </div>
-                            <div class="img-item">
+                              </div>
+                              <div class="img-item">
                                 <a href="#slide5" data-id="1"><img src={Carousel4} alt="product-image" /></a>
-                            </div>
-                            <div class="img-item">
+                              </div>
+                              <div class="img-item">
                                 <a href="#slide6" data-id="1"><img src={Carousel5} alt="product-image" /></a>
+                              </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="main-image">
-                        <div class="gallery">
-                            <div class="card-wrapper">
+                          </div>
+                          <div className="main-image">
+                            <div class="gallery">
+                              <div class="card-wrapper">
                                 <div class="card">
-                                    <div class="product-imgs">
-                                        <div class="img-display">
-                                            <div class="img-showcase">
-                                                <img id="slide1" class="Product" src={Carousel2} />
-                                                <img id="slide2" class="Product" src={Carousel} />
-                                                <img id="slide3" class="Product" src={Carousel1} />
-                                                <img id="slide4" class="Product" src={Carousel3} />
-                                                <img id="slide5" class="Product" src={Carousel4} />
-                                                <img id="slide6" class="Product" src={Carousel5} />
-                                            </div>
-                                        </div>
+                                  <div class="product-imgs">
+                                    <div class="img-display">
+                                      <div class="img-showcase">
+                                        <img id="slide1" class="Product" src={Carousel2} />
+                                        <img id="slide2" class="Product" src={Carousel} />
+                                        <img id="slide3" class="Product" src={Carousel1} />
+                                        <img id="slide4" class="Product" src={Carousel3} />
+                                        <img id="slide5" class="Product" src={Carousel4} />
+                                        <img id="slide6" class="Product" src={Carousel5} />
+                                      </div>
                                     </div>
+                                  </div>
                                 </div>
+                              </div>
                             </div>
-                        </div>
-                    </div>
+                          </div>
 
-                </div>
+                        </div>
                       </div>
                       <div className="mainB">
                         <div>
@@ -289,19 +313,20 @@ export default class App extends Component {
 
                           <div className="price-container">
                             <div className="sub-container">
-                            <span><p className="sprice">
-                              {this.state.data.data.currency.base_currency_symbol}
-                              {this.state.data.data.products.items[0].price.minimalPrice.amount.value}<br />
-                            </p>
-                            <p className="price">
+                              <span><p className="sprice">
                                 {this.state.data.data.currency.base_currency_symbol}
-                                {this.state.data.data.products.items[0].price.regularPrice.amount.value}
+                                {this.state.data.data.products.items[0].price.minimalPrice.amount.value}<br />
                               </p>
-                            </span>
+                                <p className="price">
+                                  {this.state.data.data.currency.base_currency_symbol}
+
+                                  {this.state.data.data.products.items[0].price.regularPrice.amount.value}
+                                </p>
+                              </span>
                             </div>
                             <div className="sub-container">
-                            <span><button>1</button></span>
-                            <span><button>2</button></span>
+                              <span><button>1</button></span>
+                              <span><button>2</button></span>
                             </div>
                           </div>
                         </div>
@@ -313,7 +338,56 @@ export default class App extends Component {
                     </div>
                   </div>
                 </div>
+                <div className="related-items-container">
+                <div className="related-content">
+                    <h4>YOU MAY ALSO LIKE</h4>
+                  </div>
+                  <div className="related-products">
+                    <div className="related-products-items">
+                      <div><img alt="main" className="main-image related-image" src=
+                        {this.state.data.data.products.items[0].related_products[0].image.url} /> </div>
+                      <div className="related-price">{this.state.data.data.currency.base_currency_symbol}
+                      {this.state.data.data.products.items[0].related_products[0].price.maximalPrice.amount.value}</div>
+                      <div className="realted-original-price">{this.state.data.data.currency.base_currency_symbol}
+                      {this.state.data.data.products.items[0].related_products[0].price.regularPrice.amount.value}</div>
+                      <div>{this.state.data.data.products.items[0].related_products[0].name}</div>
+                    </div>
 
+                    <div className="related-products-items">
+                      <div><img alt="main" className="main-image related-image" src=
+                        {this.state.data.data.products.items[0].related_products[1].image.url} /> </div>
+                      <div className="related-price">{this.state.data.data.currency.base_currency_symbol}
+                      {this.state.data.data.products.items[0].related_products[1].price.maximalPrice.amount.value}</div>
+                      <div className="realted-original-price">{this.state.data.data.currency.base_currency_symbol}
+                      {this.state.data.data.products.items[0].related_products[1].price.regularPrice.amount.value}</div>
+                      <div>{this.state.data.data.products.items[0].related_products[1].name}</div>
+                    </div>
+
+                    <div className="related-products-items">
+                      <div><img alt="main" className="main-image related-image" src=
+                        {this.state.data.data.products.items[0].related_products[2].image.url} /> </div>
+                      <div className="related-price">{this.state.data.data.currency.base_currency_symbol}
+                      {this.state.data.data.products.items[0].related_products[2].price.maximalPrice.amount.value}</div>
+                      <div className="realted-original-price">{this.state.data.data.currency.base_currency_symbol}
+                      {this.state.data.data.products.items[0].related_products[2].price.regularPrice.amount.value}</div>
+                      <div>{this.state.data.data.products.items[0].related_products[2].name}</div>
+                    </div>
+
+                    <div className="related-products-items">
+                      <div><img alt="main" className="main-image related-image" src=
+                        {this.state.data.data.products.items[0].related_products[3].image.url} /> </div>
+                      <div className="related-price">{this.state.data.data.currency.base_currency_symbol}
+                      {this.state.data.data.products.items[0].related_products[3].price.maximalPrice.amount.value}</div>
+                      <div className="realted-original-price">{this.state.data.data.currency.base_currency_symbol}
+                      {this.state.data.data.products.items[0].related_products[3].price.regularPrice.amount.value}</div>
+                      <div>{this.state.data.data.products.items[0].related_products[3].name}</div>
+                    </div>
+
+                  </div>
+                </div>
+                <div>
+                  <div dangerouslySetInnerHTML={{ __html: this.state.data.data.cmsBlocks.items[0].content }} />
+                </div>
               </>
               )
             }
